@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package clase;
-
-/**
- *
- * @author golden
+/*
+ * Interfaz para la explicaciòn de Prototype
  */
 public interface IPrototype {
+	/*
+	 * Mètodo que clona un objeto que implemente protoype y que guarde sus dato
+	 */
     public IPrototype clone();
 }

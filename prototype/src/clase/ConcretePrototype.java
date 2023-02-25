@@ -1,18 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package clase;
-
-/**
- *
- * @author golden
+/*
+ * Clase ConcreteProtoType que implementa la interfaz IPrototype
  */
 public class ConcretePrototype implements IPrototype{
+	
     protected int id;
     protected int id2;
     protected String name;
     
+    /*
+     * Constructor vacio
+     */
     public ConcretePrototype(){}
     
     public ConcretePrototype(ConcretePrototype cp){
