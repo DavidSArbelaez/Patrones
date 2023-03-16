@@ -2,7 +2,12 @@ package SAP;
 
 public class DirectorMaterias {
 	
+	public void reset() {
+		
+	}
+	
 	public void makeMateria(Builder builder) {
-		builder.setCreditos();
+		int creditos = builder.setCreditos();
+		int semestre =buil
 	}
 }
