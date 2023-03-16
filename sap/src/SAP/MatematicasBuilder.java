@@ -1,7 +1,6 @@
 package SAP;
 
 public class MatematicasBuilder implements Builder{
-	Materia materia;
 	private int cont = 0;
 	@Override
 	public int setCreditos() {
