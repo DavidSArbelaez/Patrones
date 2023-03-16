@@ -14,7 +14,6 @@ public abstract class Persona {
 		this.id = id;
 	}
 
-	public abstract void menu();
 
 	public String getNombre() {
 		return nombre;

@@ -2,19 +2,27 @@ package SAP;
 
 import java.util.ArrayList;
 
-public class InscripcionAsignaturas {
+public class Asignaturas {
 	
 	Estudiantes estudiante;
 	
-	public boolean InscribirMateria(Materia Materia) {
-		ArrayList<Materia> listaMaterias = estudiante.getMaterias();
-		for (Materia materia : listaMaterias) {
+	public Asignaturas(Estudiantes estudiante) {
+		this.estudiante=estudiante;
+	}
+	
+	public void InscribirMateria(Materia Materia) {
+		ArrayList<Materia> lista = estudiante.getMaterias();
+		
+		for (Materia materia : lista) {
 			if(materia.getNombreMateria().compareTo(Materia.getNombreMateria())!=0 && 
 					materia.getCodigo().compareTo(Materia.getCodigo())!=0) {
-				return true;
+				
 			}
 		}
-		return false;
+	}
+	
+	public void mostrarHorario() {
+		
 	}
 	
 	
