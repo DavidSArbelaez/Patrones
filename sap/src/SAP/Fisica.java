@@ -5,7 +5,6 @@ public class Fisica implements Builder{
 	private int cont = 0;
 	@Override
 	public int setCreditos() {
-		// TODO Auto-generated method stub
 		return 6;
 	}
 
@@ -24,7 +23,7 @@ public class Fisica implements Builder{
 	@Override
 	public int setSemestre() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 5	;
 	}
 	
 }

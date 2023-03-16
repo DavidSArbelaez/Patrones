@@ -6,7 +6,7 @@ public class InscripcionAsignaturas {
 	
 	Estudiantes estudiante;
 	
-	public boolean verificarMateriaPreEscrita(Materia Materia) {
+	public boolean InscribirMateria(Materia Materia) {
 		ArrayList<Materia> listaMaterias = estudiante.getMaterias();
 		for (Materia materia : listaMaterias) {
 			if(materia.getNombreMateria().compareTo(Materia.getNombreMateria())!=0 && 
