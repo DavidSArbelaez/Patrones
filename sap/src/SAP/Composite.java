@@ -8,23 +8,37 @@ import java.util.ArrayList;
  */
 public class Composite implements IComponenteMaterias{
 	ArrayList<IComponenteMaterias> listaMaterias = new ArrayList<IComponenteMaterias>();
+	
+	public void añadirMateria(IComponenteMaterias materia) {
+		listaMaterias.add(materia);
+	}
+	
+	public void quitarMateria(IComponenteMaterias materia) {
+		listaMaterias.remove(materia);
+	}
+	
+	/**
+	 * @return the listaMaterias
+	 */
+	protected ArrayList<IComponenteMaterias> getListaMaterias() {
+		return listaMaterias;
+	}
 
 	@Override
 	public int GetNumCreditos() {
-		// TODO Auto-generated method stub
-		return 0;
+		int cont=0;
+		for (IComponenteMaterias materia : listaMaterias) {
+			cont+=materia.GetNumCreditos();
+		}
+		return cont;
 	}
 
 	@Override
 	public float notaFinalProm() {
-		// TODO Auto-generated method stub
-		return 0;
+		int sum=0;
+		for (IComponenteMaterias materia : listaMaterias) {
+			sum+=materia.notaFinalProm();
+		}
+		return sum/GetNumCreditos();
 	}
-
-	@Override
-	public float notaParcial() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
 }

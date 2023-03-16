@@ -31,25 +31,11 @@ public class Materia implements IComponenteMaterias{
 		return Creditos;
 	}
 
-	/*
-	 * Método que suma las notas de las materias para sacar el promedio en el director/composite
-	 */
-	
-
 	@Override
 	public float notaFinalProm() {
-		// TODO Auto-generated method stub
-		return 0;
+		calcularNotaFinal();
+		return getNotaFinal();
 	}
-
-	@Override
-	public float notaParcial() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-	
-
 	/**
 	 * @return the codigo
 	 */

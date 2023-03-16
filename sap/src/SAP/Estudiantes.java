@@ -17,7 +17,6 @@ public class Estudiantes extends Persona{
 		this.Materias = new ArrayList<Materia>();
 	}
 	
-	
 
 	/**
 	 * @param materias the materias to set
