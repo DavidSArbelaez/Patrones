@@ -1,13 +1,27 @@
 package SAP;
-
+import java.util.Random;
 public class DirectorMaterias {
 	
-	public void reset() {
-		
+	public Builder cambiarBuilder(int i) {
+		if(i%2==0) {
+			return new MatematicasBuilder();
+		}
+		return new Fisica();
 	}
 	
-	public void makeMateria(Builder builder) {
+	public Materia make(String code) {
+		Builder builder;
+		Random r = new Random();
+		int a = r.nextInt(1,30);
+		
+		builder = cambiarBuilder(a);
+		int semestre= builder.setSemestre();
 		int creditos = builder.setCreditos();
-		int semestre =buil
+		a = r.nextInt(1,30);
+		builder = cambiarBuilder(a);
+		String nombre=builder.setNombreMateria();
+		
+		
+		return new Materia(nombre,creditos,semestre,code);
 	}
 }
