@@ -20,8 +20,8 @@ public class Composite implements IComponenteMaterias{
 	/**
 	 * @return the listaMaterias
 	 */
-	protected ArrayList<IComponenteMaterias> getListaMaterias() {
-		return listaMaterias;
+	protected ArrayList<Materia> getListaMaterias() {
+		return (ArrayList<Materia>)listaMaterias;
 	}
 
 	@Override

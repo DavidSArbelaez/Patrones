@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class Menu {
 	public void menu() {
-		// TODO Auto-generated method stub> asignaturas;
 		Scanner teclado= new Scanner(System.in);
+		Asignaturas asignatura= new Asignaturas();
+		Estudiantes estudiante=new Estudiantes(null, 0, 0, null);
 		System.out.println("Menú: Digite una opción");
 		
 		System.out.println("1 - Servicios");
@@ -29,9 +30,8 @@ public class Menu {
 			
 			int opcion1 = teclado.nextInt();
 			switch (opcion1) {
-			
 			case 1:
-				
+				asignatura.mostrarHorario(estudiante.getComposite().getListaMaterias());
 				break;
 				
 			case 2:

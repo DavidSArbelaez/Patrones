@@ -4,24 +4,20 @@ import java.util.ArrayList;
 
 public class Asignaturas {
 	
-	Estudiantes estudiante;
-	
-	public Asignaturas(Estudiantes estudiante) {
-		this.estudiante=estudiante;
-	}
-	
-	public void InscribirMateria(Materia Materia) {
-		ArrayList<Materia> lista = estudiante.getMaterias();
+	public boolean InscribirMateria(Materia Materia,ArrayList<Materia> lista) {
+		
 		
 		for (Materia materia : lista) {
 			if(materia.getNombreMateria().compareTo(Materia.getNombreMateria())!=0 && 
 					materia.getCodigo().compareTo(Materia.getCodigo())!=0) {
-				
+				return true;
 			}
 		}
+		return false;
+		
 	}
 	
-	public void mostrarHorario() {
+	public void mostrarHorario(ArrayList<Materia> Materia) {
 		
 	}
 	
