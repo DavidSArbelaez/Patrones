@@ -1,9 +1,6 @@
 package SAP;
 
-<<<<<<< HEAD
-public class ServiciosAdministrados {
-	
-=======
+
 public class ServiciosAdministrados implements IServiciosAdministrados{
   protected int valor;
   protected int cantSemestres;
@@ -19,7 +16,7 @@ public class ServiciosAdministrados implements IServiciosAdministrados{
 	 * Constructor de la clase para clonar el objeto
 	 */
 	public ServiciosAdministrados(ServiciosAdministrados sa) {
-		this.id = sa.valor;
+		this.valor = sa.valor;
 		this.cantSemestres = sa.cantSemestres;
 		this.estudiante = sa.estudiante;
 	}
@@ -60,14 +57,11 @@ public class ServiciosAdministrados implements IServiciosAdministrados{
 	}
   
   
-	public int getestudiante() {
+	public Estudiantes getestudiante() {
 		return estudiante;
 	}
 
 	public void setestudiante(Estudiantes estudiante) {
 		this.estudiante =estudiante;
 	}
-  
-  
->>>>>>> acd44acac178208d649c78f3a55a75e526ad68c0
 }

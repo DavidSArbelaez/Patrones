@@ -2,21 +2,20 @@ package SAP;
 
 import java.util.ArrayList;
 
-
 /*
  * CLase director y composite
  */
-public class Composite implements IComponenteMaterias{
+public class Composite implements IComponenteMaterias {
 	ArrayList<Materia> listaMaterias = new ArrayList<Materia>();
-	
+
 	public void añadirMateria(Materia materia) {
 		listaMaterias.add(materia);
 	}
-	
+
 	public void quitarMateria(IComponenteMaterias materia) {
 		listaMaterias.remove(materia);
 	}
-	
+
 	/**
 	 * @return the listaMaterias
 	 */
@@ -26,20 +25,20 @@ public class Composite implements IComponenteMaterias{
 
 	@Override
 	public int GetNumCreditos() {
-		int cont=0;
+		int cont = 0;
 		for (IComponenteMaterias materia : listaMaterias) {
-			cont+=materia.GetNumCreditos();
+			cont += materia.GetNumCreditos();
 		}
 		return cont;
 	}
 
 	@Override
 	public float notaFinalProm() {
-		int sum=0;
+		int sum = 0;
 		for (IComponenteMaterias materia : listaMaterias) {
-			sum+=materia.notaFinalProm();
+			sum += materia.notaFinalProm();
 		}
-		return sum/GetNumCreditos();
+		return sum / GetNumCreditos();
 	}
 
 	@Override

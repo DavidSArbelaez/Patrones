@@ -1,6 +1,6 @@
 package SAP;
 
-public class Materia implements IComponenteMaterias{
+public class Materia implements IComponenteMaterias {
 	String nombreMateria;
 	String codigo;
 	int Creditos;
@@ -9,8 +9,8 @@ public class Materia implements IComponenteMaterias{
 	float corte_2;
 	float corte_3;
 	float notaFinal;
-	
-	public Materia(String nombreMaterias,int creditos, int semestre, String Codigo) {
+
+	public Materia(String nombreMaterias, int creditos, int semestre, String Codigo) {
 		this.nombreMateria = nombreMaterias;
 		this.Creditos = creditos;
 		this.semestre = semestre;
@@ -19,15 +19,13 @@ public class Materia implements IComponenteMaterias{
 		this.corte_3 = 0;
 		this.codigo = Codigo;
 	}
-	
-	
-	
+
 	private void calcularNotaFinal() {
-		this.notaFinal = (this.getCorte_1()*0.3f)+(this.getCorte_2()*0.3f)+(this.getCorte_3()*0.4f);
+		this.notaFinal = (this.getCorte_1() * 0.3f) + (this.getCorte_2() * 0.3f) + (this.getCorte_3() * 0.4f);
 	}
-	
+
 	@Override
-	public int GetNumCreditos(){
+	public int GetNumCreditos() {
 		return Creditos;
 	}
 
@@ -36,6 +34,7 @@ public class Materia implements IComponenteMaterias{
 		calcularNotaFinal();
 		return getNotaFinal();
 	}
+
 	/**
 	 * @return the codigo
 	 */
@@ -116,27 +115,26 @@ public class Materia implements IComponenteMaterias{
 		return notaFinal;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Materia " + nombreMateria + ", codigo de la materia es " + codigo + ", creditos que vale la materia="
+				+ Creditos + ", del " + semestre + "semestre";
+	}
 
 	@Override
 	public void mostrarNotasParciales() {
-		
-		//Mostrar la info de la materia
-		
-		if(this.getCorte_1()>0) {
-			System.out.println("Nota del primer corte: "+this.getCorte_1());
+
+		System.out.println(toString());
+
+		if (this.getCorte_1() > 0) {
+			System.out.println("Nota del primer corte: " + this.getCorte_1());
 		}
-		if(this.getCorte_2()>0) {
-			System.out.println("Nota del segundo corte: "+this.getCorte_2());
+		if (this.getCorte_2() > 0) {
+			System.out.println("Nota del segundo corte: " + this.getCorte_2());
 		}
-		if(this.getCorte_3()>0) {
-			System.out.println("Nota del tercer corte: "+this.getCorte_3());
+		if (this.getCorte_3() > 0) {
+			System.out.println("Nota del tercer corte: " + this.getCorte_3());
 		}
 	}
-	
-	
-
-	
-	
 
 }

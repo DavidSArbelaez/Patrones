@@ -13,7 +13,6 @@ public class Estudiantes extends Persona {
 
 	public void addMateria(Materia materia) {
 		composite.añadirMateria(materia);
-
 	}
 
 	/**
@@ -47,7 +46,8 @@ public class Estudiantes extends Persona {
 
 	@Override
 	public String toString() {
-		return "Estudiantes [carrera=" + carrera + "]";
+		return "El programa academico para " + carrera + " en el semestre " + semestre + " y tiene "
+				+ composite.GetNumCreditos() + " creditos en materias";
 	}
 
 }
