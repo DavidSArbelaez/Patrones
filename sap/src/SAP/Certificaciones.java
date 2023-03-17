@@ -29,4 +29,8 @@ public class Certificaciones extends Certificado {
 	public void CopiaActaGrado(String estudiante) {
 		System.out.println(estudiante + " Recibe la Copia del Acta de Grado");
 	}
+	
+	public void Normativa() {
+		System.out.println(" normativa de la Universidad");
+	}
 }
