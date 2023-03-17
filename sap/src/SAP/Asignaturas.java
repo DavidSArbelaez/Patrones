@@ -4,9 +4,7 @@ import java.util.ArrayList;
 
 public class Asignaturas {
 	
-	public boolean InscribirMateria(Materia Materia,ArrayList<Materia> lista) {
-		
-		
+	public boolean VerificarMateria(Materia Materia,ArrayList<Materia> lista) {
 		for (Materia materia : lista) {
 			if(materia.getNombreMateria().compareTo(Materia.getNombreMateria())!=0 && 
 					materia.getCodigo().compareTo(Materia.getCodigo())!=0) {
@@ -17,8 +15,11 @@ public class Asignaturas {
 		
 	}
 	
-	public void mostrarHorario(ArrayList<Materia> Materia) {
-		
+	public void mostrarMaterias(ArrayList<Materia> Materia) {
+		System.out.println();
+		for (Materia materia2 : Materia) {
+			System.out.println("- "+ materia2);
+		}
 	}
 	
 	

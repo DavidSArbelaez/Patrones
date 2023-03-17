@@ -7,9 +7,9 @@ import java.util.ArrayList;
  * CLase director y composite
  */
 public class Composite implements IComponenteMaterias{
-	ArrayList<IComponenteMaterias> listaMaterias = new ArrayList<IComponenteMaterias>();
+	ArrayList<Materia> listaMaterias = new ArrayList<Materia>();
 	
-	public void añadirMateria(IComponenteMaterias materia) {
+	public void añadirMateria(Materia materia) {
 		listaMaterias.add(materia);
 	}
 	
@@ -21,7 +21,7 @@ public class Composite implements IComponenteMaterias{
 	 * @return the listaMaterias
 	 */
 	protected ArrayList<Materia> getListaMaterias() {
-		return (ArrayList<Materia>)listaMaterias;
+		return listaMaterias;
 	}
 
 	@Override
@@ -40,5 +40,12 @@ public class Composite implements IComponenteMaterias{
 			sum+=materia.notaFinalProm();
 		}
 		return sum/GetNumCreditos();
+	}
+
+	@Override
+	public void mostrarNotasParciales() {
+		for (Materia materia : listaMaterias) {
+			materia.mostrarNotasParciales();
+		}
 	}
 }

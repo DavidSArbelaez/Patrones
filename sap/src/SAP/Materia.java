@@ -115,6 +115,24 @@ public class Materia implements IComponenteMaterias{
 	public float getNotaFinal() {
 		return notaFinal;
 	}
+
+
+
+	@Override
+	public void mostrarNotasParciales() {
+		
+		//Mostrar la info de la materia
+		
+		if(this.getCorte_1()>0) {
+			System.out.println("Nota del primer corte: "+this.getCorte_1());
+		}
+		if(this.getCorte_2()>0) {
+			System.out.println("Nota del segundo corte: "+this.getCorte_2());
+		}
+		if(this.getCorte_3()>0) {
+			System.out.println("Nota del tercer corte: "+this.getCorte_3());
+		}
+	}
 	
 	
 

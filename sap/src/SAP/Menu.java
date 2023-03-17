@@ -1,5 +1,6 @@
 package SAP;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Menu {
@@ -18,28 +19,36 @@ public class Menu {
 		
 		case 1:
 			System.out.println("Servicios");
-			System.out.println("1 - Consultar horario");
+			System.out.println("1 - Consultar materias");
 			System.out.println("2 - Consultar notas parciales");
 			System.out.println("3 - Actualizar datos");
 			System.out.println("4 - Solicitudes certificado");
-			System.out.println("5 - Programa academico");
-			System.out.println("6 - Consulta normativa");
-			System.out.println("7 - Inscribe asignaturas");
-			System.out.println("8 - Solicitudes academicas administrativas");
-			System.out.println("9 - Consulta cita matricula");
+			System.out.println("5 - Consulta normativa");
+			System.out.println("6 - Inscribe asignaturas");
+			System.out.println("7 - Solicitudes academicas administrativas");
+			System.out.println("8 - Consulta cita matricula");
 			
 			int opcion1 = teclado.nextInt();
 			switch (opcion1) {
 			case 1:
-				asignatura.mostrarHorario(estudiante.getComposite().getListaMaterias());
+				asignatura.mostrarMaterias(estudiante.getComposite().getListaMaterias());
 				break;
 				
 			case 2:
-				
+				estudiante.composite.mostrarNotasParciales();
 				break;
 				
 			case 3:
+				System.out.println("Ingrese el nuevo correo del estudiante:");
+				String correo = teclado.next();
+				estudiante.setCorreo(correo);
 				
+				System.out.println("Ingrese el nombre de la carrera del estudiante:");
+				String carrera = teclado.next();
+				estudiante.setCarrera(carrera);
+				System.out.println("");
+				System.out.println("Los datos del estudiante son:");
+				estudiante.toString();
 				break;
 				
 			case 4:
@@ -51,11 +60,20 @@ public class Menu {
 				break;
 				
 			case 6:
-			
+				DirectorMaterias director = new DirectorMaterias();
+				Random r = new Random();
+				Materia materia= director.make("SS0"+Integer.toString(r.nextInt(15,30)));
+				if(asignatura.VerificarMateria(materia,estudiante.composite.getListaMaterias())) {
+					estudiante.addMateria(materia);
+					//Mostarr el Tostring con los datos de la materia nueva(ninguna nota)
+					System.out.println("Se realizo con exito la inscripción de la materia nueva.");
+				}else {
+					System.out.println("No se pudo realizar la inscripción dado que la materia ya esta inscrita");
+				}
 				break;
 				
 			case 7:
-			
+				
 				break;
 			
 			case 8:
