@@ -1,14 +1,27 @@
 package SAP;
 
+
+
 import java.util.Scanner;
 
 public class Menu {
 	public void menu() {
 		Scanner teclado = new Scanner(System.in);
 		ServiciosEstudiantes servicio = new ServiciosEstudiantes();
+		
+		System.out.println("Ingrese el nombre, identificacion, semestre a cursar y la carrera cursada");
+		String nombre = teclado.nextLine();
+		int id = teclado.nextInt();
+		int semestre = teclado.nextInt();
+		String carrera = teclado.next();
 
-		// Pedir los datos del estudiante
-		Estudiantes estudiante = new Estudiantes(null, 0, 0, null);
+
+		Estudiantes estudiante = new Estudiantes(nombre, id, semestre, carrera);
+
+		
+		Certificaciones certificados = new Certificaciones(estudiante, "academico");
+		Solicitudes solicitud = new Solicitudes();
+		Pagos pagos = new Pagos();
 		System.out.println("Menú: Digite una opción");
 		System.out.println("1 - Servicios");
 		System.out.println("2 - Pagos");
@@ -43,11 +56,11 @@ public class Menu {
 				break;
 
 			case 4:
-
+				certificados.CertificadoEstudio(estudiante.getNombre());
 				break;
 
 			case 5:
-
+				certificados.Normativa();
 				break;
 
 			case 6:
@@ -55,7 +68,7 @@ public class Menu {
 				break;
 
 			case 7:
-
+				solicitud.solicitudAcademicaAdministrativa();
 				break;
 
 			case 8:
@@ -80,19 +93,19 @@ public class Menu {
 			int opcion2 = teclado.nextInt();
 			switch (opcion2) {
 			case 1:
-
+				pagos.pagoInscripcionAdmisiones();
 				break;
 			case 2:
-
+				pagos.pagoMatriculaAcademia();
 				break;
 			case 3:
-
+				pagos.pagoInscripcionExtenxion();
 				break;
 			case 4:
-
+				pagos.financiacion();
 				break;
 			case 5:
-
+				pagos.pagoDerechoGrado();
 				break;
 
 			}
@@ -108,22 +121,22 @@ public class Menu {
 			int opcion3 = teclado.nextInt();
 			switch (opcion3) {
 			case 1:
-
+				solicitud.solicitudAcademicaAdministrativa();
 				break;
 			case 2:
-
+				solicitud.preparatorio();
 				break;
 			case 3:
-
+				solicitud.retiroAplazamientoReintegro();
 				break;
 			case 4:
-
+				solicitud.solicitudPinDEVsaldo();
 				break;
 			case 5:
-
+				solicitud.supletorioPregrado();
 				break;
 			case 6:
-
+				solicitud.solicitudRenovacionCreditoICETEX();
 				break;
 			}
 			break;
